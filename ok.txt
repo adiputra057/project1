@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<style>
+*{
+    margin: 0px;
+    box-sizing: border-box;
+}
+            #body{
+            margin: 0px 10px;
+            width:100%;
+            height:auto;
+            border: 1px solid black;
+
+}
+ 
+.header .badan .content .footer{
+                border: 1px solid black;
+                color: black;
+            
+}
+.header{
+	background: orange;
+	/*height: 50px;*/
+	padding: 30px;
+    height: 100px;
+}
+
+.badan{
+	height: 470px;
+}
+
+.badan .sidebar{
+    line-height: 50px;
+	float: left;
+    height: 300px;	
+	width: 20%;
+	height: 100%;
+    text-align: center;
+    padding-top: 100px;
+    padding-right: 50px;
+    
+}
+ 
+.badan .content{
+	float: left;
+	height: 100%;
+	width: 80%;
+    padding-top: 100px;	
+}
+
+img{
+            width: 170px;
+            height: 200px;
+            border: 2px solid #000000;
+            margin-left: 50px;
+            float: left;
+}
+ 
+.footer{
+	clear: both;
+	padding-top: 20px;
+    text-align: center;
+}
+</style>
+<body>
+		<div class="header">			
+			<h1>Profile Nama</h1>
+		</div>
+		<div class="badan">			
+			<div class="sidebar">
+				<ul style="list-style: none;">
+					<li><a href="index.html">Home</a></li>
+					<li><a href="profil.html">Profil</a></li>			
+				</ul>
+			</div>
+			<div class="content">
+				<div id="isi">
+                    <p align="justify" style="margin-right: 20px;"><img src="foto almamater.jpeg" alt="gambar" style="margin-right: 20px;">Perkenalkan nama saya Gede Adi Dwi Putra bisa dipanggil Adi. 
+                        Saya lahir di Kota Denpasar pada tanggal 09 Juni 2002. Saya memilki beberapa hobi seperti bermain game, olahrga, dan coding. Saya tinggal di Kerobokan, Badung bersama orang tua. 
+                        Saya merupakan anak kedua dari dua bersaudara. Pada tahun 2008 saya pertama kali menempuh pendidikan di TK Pradnyadari II. Setelah lulus saya melanjutkan SD di SDN 3 Kerobokan pada tahun 2009.</p>
+                </div>  
+			</div>
+		</div>
+		
+		<div class="footer">
+			<b><p align="center" style="font-size:medium;">Copyright© 2022 By Adi Putra</p></b>
+		</div>
+	
+</body>
+</html>

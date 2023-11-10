@@ -1,0 +1,2299 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bali Computer</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  </head>
+  <script>
+    // Javascript Beli //
+    function cekform(){
+        var nama = document.forms ['formulir_tambah']['nama'].value;
+        var email = document.forms ['formulir_tambah']['email'].value;
+        var alamat = document.forms ['formulir_tambah']['alamat'].value;
+        var foto = document.forms ['formulir_tambah']['foto'].value;
+        if (nama == ""){
+            alert("Feild Nama Masih Kosong");
+            document.getElementById("nama").focus();
+            return false;
+        }else if (email == ""){
+            alert("Feild Email Masih Kosong");
+            document.getElementById("email").focus();
+            return false;
+        }else if (alamat ==""){
+            alert("Feild Alamat Rumah Masih Kosong");
+            document.getElementById("alamat rumah").focus();
+            return false;
+        }else if (foto == ""){
+            alert("Feild Bukti Pembayaran Masih Kosong");
+            document.getElementById("foto").focus();
+            return false;
+        }else {
+          alert("Pembayaran Berhasil Terkirim")
+        }
+    }
+    function fileValidation() {
+    var fileInput = document.getElementById('foto');
+    var filePath = fileInput.value;
+    var allowedExtensions = /(\.jpg|\.jpeg|\.png|\.gif)$/i;
+    if(!allowedExtensions.exec(filePath)){
+        alert('Silakan upload file dengan tipe .jpeg/.jpg/.png/.gif');
+        fileInput.value = '';
+        return false;
+    } else {
+        if (fileInput.files && fileInput.files[0]) {
+        var reader = new FileReader();
+        reader.onload = function(e) {
+        document.getElementById('upload_foto').src = e.target.result;
+        };
+        reader.readAsDataURL(fileInput.files[0]);
+        }
+    }
+}
+// Javascript Beli End //
+
+// Javascript Form //
+function chekform(){
+        var nama = document.forms ['formulir_form']['nama'].value;
+        var email = document.forms ['formulir_form']['email'].value;
+        var alamat = document.forms ['formulir_form']['alamat'].value;
+        var gambar = document.forms ['formulir_form']['gambar'].value;
+        var cv = document.forms ['formulir_form']['cv'].value;
+
+        if (nama == ""){
+            alert("Feild Nama Masih Kosong");
+            document.getElementById("nama").focus();
+            return false;
+        }else if (email == ""){
+            alert("Feild Email Masih Kosong");
+            document.getElementById("email").focus();
+            return false;
+        }else if (alamat ==""){
+            alert("Feild Alamat Rumah Masih Kosong");
+            document.getElementById("alamat rumah").focus();
+            return false;
+        }else if (gambar == ""){
+            alert("Gambar Masih Kosong");
+            document.getElementById("gambar").focus();
+            return false;
+        }else if (cv == ""){
+            alert("Mohon Lampirkan CV");
+            document.getElementById("cv").focus();
+            return false;
+        }else {
+          alert("Form Berhasil Terkirim")
+        }
+    }
+    function validation() {
+    var fileInput = document.getElementById('gambar');
+    var filePath = fileInput.value;
+    var allowedExtensions = /(\.jpg|\.jpeg|\.png|\.gif)$/i;
+    if(!allowedExtensions.exec(filePath)){
+        alert('Silakan upload file dengan tipe .jpeg/.jpg/.png/.gif');
+        fileInput.value = '';
+        return false;
+    } else {
+        if (fileInput.files && fileInput.files[0]) {
+        var reader = new FileReader();
+        reader.onload = function(e) {
+        document.getElementById('upload_gambar').src = e.target.result;
+        };
+        reader.readAsDataURL(fileInput.files[0]);
+        }
+    }
+}
+// Javascript Form End//
+</script>
+  <style>
+  @import url('https://fonts.googleapis.com/css2?family=Merriweather:ital@0;1&family=Poppins:ital,wght@0,500;0,800;1,500;1,600&family=Viga&display=swap');
+    .nav{
+      backdrop-filter: blur(-50px);
+      box-shadow: inset 0 20px 30px rgba(0, 0, 0, 0.1);
+    }
+    .nav-link{
+      text-transform: uppercase;
+    }
+    .nav-link:hover::after{
+      content: '';
+      display: block;
+      border-bottom: 3px white solid;
+      width: 50%;
+      margin: auto;
+    }
+    #index .display-4{
+      font-family: poppins,sans-serif;
+      font-size: 0.90rem;
+    }
+    .carousel-item .img{
+      background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5));
+      margin-top: -120px;
+    }
+    .carousel-item .display-4{
+      margin-top: -400px;
+    }
+    .card-layanan{
+      border-radius: 5px;
+      padding: 40px;
+    }
+    .card-layanan .card-body
+    {
+      text-align: center;
+      font-family: poppins, sans-serif;
+      font-size: 0.99rem;
+    }
+    .circle-icon{
+      width: 80px;
+      height: 80px;
+      background-color: white;
+      border-radius: 50%;
+    }
+    .card p{
+      margin-top: -10px;
+      margin-bottom: 8px;
+    }
+    .row .card:hover{
+      transform: scale(1.03);
+    }
+    #profil p{
+      font-family: poppins, sans-serif;
+      font-size: 0.90rem;
+    }
+    .card-text{
+      font-family: poppins,sans-serif;
+      font-size: 0.99rem;
+    }
+    #kontak p{
+      font-family: poppins,sans-serif;
+      font-size: 0.90rem;
+    }
+    #team p{
+      font-family: poppins,sans-serif;
+      font-size: 0.99rem;
+    }
+    .footer .container {
+    font-family: poppins, sans-serif;
+    font-size: 0.90rem;
+    }
+    .footer ul li a{
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    }
+
+  </style>
+<body id="page-top">
+<!-- Navbar -->
+  <nav class="navbar fixed-top navbar-expand-lg navbar-dark p-md-2">
+    <div class="container-fluid">
+      <a class="navbar-brand fw-bold ms-5 my-2" href="#index">
+        <img src="img/logo2.png" width="110px">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 fw-bold">
+          <li class="nav-item mx-1">
+            <a class="nav-link active" aria-current="page" href="#index">Beranda</a>
+          </li>
+          <li class="nav-item mx-1">
+            <a class="nav-link active" href="#kategori">Layanan</a>
+          </li>
+          <li class="nav-item mx-1">
+            <a class="nav-link active" href="#profil">Tentang</a>
+          </li>
+          <li class="nav-item mx-1 me-5">
+            <a class="nav-link active" href="#kontak">Kontak</a>
+          </li>
+        </ul>
+        <!--
+        <form class="d-flex" role="search">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-light" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+        </form>  -->
+      </div>
+    </div>
+</nav>
+<!-- Navbar End -->
+
+<!-- Jumbotron -->
+<div id="index">
+  <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="img/111.png" class="d-block w-100" alt="...">
+        <div class="carousel-caption d-sm-block position-absolute">
+          <p class="display-4 d-none d-md-block mb-3 fs-5 fw-bold">Kami Melayani Jasa Rakit PC Serta Jasa Service Laptop dan Komputer</p>
+          <a class="btn btn-outline-light btn-lg m-2 fw-bold" data-mdb-ripple-color="dark" type="button" href="#kategori" role="button">
+          LAYANAN KAMI</a>            
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="img/222.png" class="d-block w-100" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+          <p class="display-4 d-none d-md-block mb-3 fs-5 fw-bold">Informasi Tentang Kontak Dan Alamat Toko Kami</p>
+          <a class="btn btn-outline-light btn-lg m-2 fw-bold" data-mdb-ripple-color="dark" type="button" href="#profil" role="button">
+          TENTANG KAMI</a>            
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="img/444.jpeg" class="d-block w-100" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+          <h5 class="display-4 fs-1 fw-bold mb-4"></h5>
+          <p class="display-4 d-none d-md-block mb-3 fs-5 fw-bold">Temukan Produk Laptop dan Perlengkapan Komputer Yang Anda Cari</p>
+          <a class="btn btn-outline-light btn-lg m-2 fw-bold" data-mdb-ripple-color="dark" type="button" href="#produk" role="button">
+          PRODUK KAMI</a>            
+        </div>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+</div>
+<!-- Jumbotron End -->
+
+<!-- Kategori -->
+<div id="kategori"><br>
+  <div data-aos="fade-up" data-aos-duration="1000" class="container pt-5">
+    <div class="row pt-5">
+      <div class="col-12 text-center">
+        <h4 class="fw-bold">LAYANAN KAMI</h4>
+      </div>
+    </div>
+    <div class="row justify-content-center py-3">
+      <div class="col-lg-4 col-md-6 pb-3">
+        <div class="card-layanan bg-danger">
+          <div class="circle-icon position-relative mx-auto">
+            <img src="img/icon laptop.png" alt="" class="position-absolute top-50 start-50 translate-middle">
+          </div>
+          <div class="card-body">
+            <h5 class="card-title mt-4 mb-2 text-white">Laptop & Lainnya</h5>
+            <p class=" text-white mb-3">Menjual laptop dan perlengkapan komputer lainnya. Setiap pembelian produk laptop brand
+              apaun gratis instal Windows 11 dan aplikasi lainnya.
+            </p>
+            <a href="#laptop" class="btn btn-outline-dark text-white mx-auto fw-bold">PRODUK KAMI</a>
+          </div>       
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6 pb-3">
+        <div class="card-layanan bg-warning">
+          <div class="circle-icon position-relative mx-auto">
+            <img src="img/icon pc.png" alt="" class="position-absolute top-50 start-50 translate-middle">
+          </div>
+          <div class="card-body">
+            <h5 class="card-title mt-4 mb-2 text-white">Rakit PC</h5>
+            <p class=" text-white mb-3">Membantu dalam memilih spesifikasi PC yang diinginkan. Setiap perakitan PC 
+              akan mendapatkan gratis Instal Windows 11 dan Aplikasi lainnya.</p>
+            <a href="#pc" class="btn btn-outline-dark text-white mx-auto fw-bold">RAKIT PC</a>
+          </div>       
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6 pb-3">
+        <div class="card-layanan bg-info">
+          <div class="circle-icon position-relative mx-auto">
+            <img src="img/icon service.png" alt="" class="position-absolute top-50 start-50 translate-middle">
+          </div>
+          <div class="card-body">
+            <h5 class="card-title mt-4 mb-2 text-white">Jasa Service</h5>
+            <p class=" text-white mb-3">Kami menyediakan jasa service laptop maupun PC. Kami dapat melayani dengan datang ke rumah
+              atau bisa datang langsung ke toko.
+            </p>
+            <a href="#kontak" class="btn btn-outline-dark text-white mx-auto fw-bold">JASA SERVICE</a>
+          </div>       
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Kategri End -->
+
+<!-- Profil -->
+<div id="profil"><br><br><br>
+  <div class="container pt-5" data-aos="fade-up" data-aos-duration="1000">
+    <div class="row justify-content-between">
+      <div class="col-lg-6 col-md-12">
+        <h4 class="fw-bold text-center mb-3">GALLERY</h4>
+        <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+          <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="false">
+            <div class="carousel-inner rounded">
+              <div class="carousel-item active">
+                <a href="img/1.jpg" target="_blank"><img src="img/1.jpg" class="d-block w-100" alt="..." width="50" height="380px"></a>
+              </div>
+              <div class="carousel-item">
+                <a href="img/2.jpg" target="_blank"><img src="img/2.jpeg" class="d-block w-100" alt="..." width="50" height="380px"></a>
+              </div>
+              <div class="carousel-item">
+                <a href="img/5.jpg" target="_blank"><img src="img/5.jpg" class="d-block w-100" alt="..." width="50" height="380px"></a>
+              </div>
+              <div class="carousel-item">
+                <a href="img/4.jpg" target="_blank"><img src="img/4.jpg" class="d-block w-100" alt="..." width="50" height="380px"></a>
+              </div>
+              <div class="carousel-item">
+                <a href="img/7.jpg" target="_blank"><img src="img/7.jpg" class="d-block w-100" alt="..." width="50" height="380px"></a>
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-5 col-md-12 mt-4 text-center">
+        <a href="#"><img src="img/logo2.png" width="150px" class="mb-2"></a>
+        <p align="justify" class="fs-6">
+          BaliCom merupakan toko komputer terlengkap di Bali,<br>
+          BaliCom menyediakan berbagai macam kebutuhan anda di bidang komputer & jaringan. BaliCom tersedia mulai dari komputer, laptop hingga keperluan networking dengan harga yang sangat terjangkau.
+          Adapun disini kami membantu pelanggan bukan sekedar melayani kami juga bisa membantu pelanggan untuk memiliki PC idaman mereka dari pemilihan part serta membantu perakitan dan instal software. 
+          </p>
+          <h6 style="font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif"class="fw-bold">TUNGGU APA LAGI AYO KUNJUNGI TOKO KAMI ATAU BISA KLIK LINK DIBAWAH INI.</h6>
+        
+        <a class="btn btn-outline-dark mt-3 me-2 fw-bold" data-mdb-ripple-color="dark" type="button" href="#produk" role="button">
+          PRODUK KAMI</a>
+        <a class="btn btn-outline-dark mt-3 fw-bold" data-mdb-ripple-color="dark" type="button" href="#maps" role="button">
+          KUNJUNGI TOKO</a>                   
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Profil End -->  
+
+<!-- Produk -->
+  <div id="produk"> <br><br><br>
+    <div class="container pt-5">
+      <h4 class="text-center fw-bold">PRODUK TERBARU</h4>
+      <div class="row">
+        <div class="col-lg-3 col-md-6 my-3">
+          <div class="card p-2">
+            <a href="img/msi1.png" target="blank">
+            <img src="img/msi1.png" class="card-img-top" alt="..." width="100">
+            </a>
+            <div class="card-body bg-light">
+              <p class="card-text fw-bold mt-1">MSI MODERN 14-B11MOU-1059</p>
+              <a href="#" class="btn btn-primary ms-1 me-2" data-bs-target="#produk1" data-bs-toggle="modal">Detail</a>
+              <a href="#" class="btn btn-success" data-bs-target="#beli" data-bs-toggle="modal">Rp.10.850.000</a>
+            </div>
+          </div>
+          <div class="modal fade" id="produk1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Detail Produk</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <div class="row">
+                    <div class="col-md-5 align-items-center d-flex">
+                      <div id="baru1" class="carousel slide" data-bs-ride="true">
+                        <div class="carousel-inner">
+                          <div class="carousel-item active">
+                            <img src="img/msi1.png" class="d-block w-100" alt="...">
+                          </div>
+                          <div class="carousel-item">
+                            <img src="img/msi2.jpg" class="d-block w-100" alt="...">
+                          </div>
+                          <div class="carousel-item">
+                            <img src="img/msi3.jpg" class="d-block w-100" alt="...">
+                          </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#baru1" data-bs-slide="prev">
+                          <img src="img/previous.png" class="me-1"><span class="carousel-control-prev" aria-hidden="true"></span>
+                          <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#baru1" data-bs-slide="next">
+                          <img src="img/next.png" class="ms-3"><span class="carousel-control-next" aria-hidden="true"></span>
+                          <span class="visually-hidden">Next</span>
+                        </button>
+                      </div>
+                    </div>
+                    <div class="col-md-7">
+                      <table class="table table-borderless">
+                        <tr>
+                          <th>Nama</th>
+                          <td>MSI MODERN 14-B11MOU-1059</td>
+                        </tr>
+                        <tr>
+                          <th>Prosessor</th>
+                          <td>Intel® Core™ i7-1195G7 Processor 12M Cache, up to 5.00 GHz
+                        <tr>
+                          <th>RAM</th>
+                          <td>DDR IV 8GB</td>
+                        </tr>
+                        <tr>
+                          <th>SSD</th>
+                          <td>512GB NVMe PCIe SSD</td>
+                        </tr>
+                        <tr>
+                          <th>VGA</th>
+                          <td>Intel® Iris® Xe graphics</td>
+                        </tr>
+                        <tr>
+                          <th>Layar</th>
+                          <td>14" FHD (1920*1080), IPS-Level 60Hz</td>
+                        </tr>
+                        <tr>
+                          <th>Baterai</th>
+                          <td>3 cell , 52Whr</td>
+                        </tr>
+                        <tr>
+                          <th>Berat</th>
+                          <td>1.3 kg</td>
+                        </tr>
+                        <tr>
+                          <th>Windows</th>
+                          <td>Windows 11 Home</td>
+                        </tr>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Kembali</button>
+                  <button type="button" class="btn btn-success" data-bs-target="#beli" data-bs-toggle="modal">Beli</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+  
+         <div class="col-lg-3 col-md-6 my-3">
+          <div class="card p-2">
+            <a href="img/zen3.jpg" target="blank">
+              <img src="img/zen3.jpg" class="card-img-top" alt="..." width="100">
+            </a>
+            <div class="card-body bg-light">
+              <p class="card-text fw-bold mt-1">Asus Zenbook UX425EA i5 1135G7</p>
+              <a href="#" class="btn btn-primary ms-1 me-2" data-bs-target="#produk2" data-bs-toggle="modal">Detail</a>
+              <a href="#" class="btn btn-success" data-bs-target="#beli" data-bs-toggle="modal">Rp.12.600.000</a>
+            </div>
+          </div>
+          <div class="modal fade" id="produk2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Detail Produk</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <div class="row">
+                    <div class="col-md-5 align-items-center d-flex">
+                      <div id="baru2" class="carousel slide" data-bs-ride="true">
+                        <div class="carousel-inner">
+                          <div class="carousel-item active">
+                            <img src="img/zen1.jpg" class="d-block w-100" alt="...">
+                          </div>
+                          <div class="carousel-item">
+                            <img src="img/zen2.jpg" class="d-block w-100" alt="...">
+                          </div>
+                          <div class="carousel-item">
+                            <img src="img/zen3.jpg" class="d-block w-100" alt="...">
+                          </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#baru2" data-bs-slide="prev">
+                          <img src="img/previous.png" class="me-1"><span class="carousel-control-prev" aria-hidden="true"></span>
+                          <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#baru2" data-bs-slide="next">
+                          <img src="img/next.png" class="ms-3"><span class="carousel-control-next" aria-hidden="true"></span>
+                          <span class="visually-hidden">Next</span>
+                        </button>
+                      </div>
+                    </div>
+                    <div class="col-md-7">
+                      <table class="table table-borderless">
+                        <tr>
+                          <th>Nama</th>
+                          <td>Asus Zenbook UX425EA i5 1135G7</td>
+                        </tr>
+                        <tr>
+                          <th>Prosessor</th>
+                          <td>Intel® Core ™ i5-1135G7 0.9-2.4 GHz Up to 4.2 GHz</td>
+                        <tr>
+                          <th>RAM</th>
+                          <td>8GB LPDDR4X on board</td>
+                        </tr>
+                        <tr>
+                          <th>SSD</th>
+                          <td>512GB M.2 NVMe™ PCIe® 3.0 </td>
+                        </tr>
+                        <tr>
+                          <th>VGA</th>
+                          <td>Intel® Iris Xe Grafis</td>
+                        </tr>
+                        <tr>
+                          <th>Layar</th>
+                          <td> 14.0-inch, LCD, FHD (1920 x 1080), IPS-level</td>
+                        </tr>
+                        <tr>
+                          <th>Baterai</th>
+                          <td>Up to 22 hours battery life With 67Wh 4-cell lithium-polymer battery</td>
+                        </tr>
+                        <tr>
+                          <th>Berat</th>
+                          <td>1.5 kg</td>
+                        </tr>
+                        <tr>
+                          <th>Windows</th>
+                          <td>Windows 10 Home</td>
+                        </tr>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Kembali</button>
+                  <button type="button" class="btn btn-success" data-bs-target="#beli" data-bs-toggle="modal">Beli</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+  
+        <div class="col-lg-3 col-md-6 my-3">
+          <div class="card p-2">
+            <a href="img/pc mid.jpg" target="blank">
+            <img src="img/pc mid.jpg" class="card-img-top" alt="..." width="100">
+            </a>
+            <div class="card-body bg-light" >
+              <p class="card-text fw-bold mt-1">PC MID END GALLANT Gaming E-Sport</p>
+              <a href="#" class="btn btn-primary ms-1 me-2" data-bs-target="#produk3" data-bs-toggle="modal">Detail</a>
+              <a href="#" class="btn btn-success " data-bs-target="#beli" data-bs-toggle="modal">Rp.13.400.000</a>
+            </div>
+          </div>
+          <div class="modal fade" id="produk3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Detail Produk</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <div class="row">
+                    <div class="col-md-5 align-items-center d-flex">
+                      <div id="baru3" class="carousel slide" data-bs-ride="true">
+                        <div class="carousel-inner">
+                          <div class="carousel-item active">
+                            <img src="img/cpu pc mid.jpg" class="d-block w-100" alt="...">
+                          </div>
+                          <div class="carousel-item">
+                            <img src="img/mobo pc mid.png" class="d-block w-100" alt="...">
+                          </div>
+                          <div class="carousel-item">
+                            <img src="img/vga pc mid.png" class="d-block w-100" alt="...">
+                          </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#baru3" data-bs-slide="prev">
+                          <img src="img/previous.png" class="me-1"><span class="carousel-control-prev" aria-hidden="true"></span>
+                          <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#baru3" data-bs-slide="next">
+                          <img src="img/next.png" class="ms-3"><span class="carousel-control-next" aria-hidden="true"></span>
+                          <span class="visually-hidden">Next</span>
+                        </button>
+                      </div>
+                    </div>
+                    <div class="col-md-7">
+                      <table class="table table-borderless">
+                        <tr>
+                          <th>Prosessor</th>
+                          <td>Intel Core i5-10400F 2.9Ghz Up To 4.3Ghz</td>
+                        <tr>
+                        <tr>
+                          <th>Motherboard</th>
+                          <td>ASRock B560M Steel Legend </td>
+                        <tr>
+                          <th>RAM</th>
+                          <td>GEIL DDR4 SUPER LUCE SYNC RGB LED 3200MHz Dual Channel 16GB (2x8GB)</td>
+                        </tr>
+                        <tr>
+                          <th>SSD</th>
+                          <td>ADATA LEGEND 740 250GB NVME PCIe</td>
+                        </tr>
+                        <tr>
+                          <th>VGA</th>
+                          <td>GALAX Geforce RTX 2060 12GB DDR6 OC - DUAL FAN</td>
+                        </tr>
+                        <tr>
+                          <th>Casing</th>
+                          <td>CUBE GAMING RADAL TEMPERED GLASS (ATX)</td>
+                        </tr>
+                        <tr>
+                          <th>PSU</th>
+                          <td>Antec ATOM B650 650W 80+ Bronze</td>
+                        </tr>
+                        <tr>
+                          <th>Cooler Fan</th>
+                          <td>CUBE GAMING INDIGO, RGB RAINBOW STATIC FAN 12CM</td>
+                        </tr>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Kembali</button>
+                  <button type="button" class="btn btn-success" data-bs-target="#beli" data-bs-toggle="modal">Beli</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-lg-3 col-md-6 my-3">
+          <div class="card p-2">
+            <a href="img/pc low.png" target="blank">
+              <img src="img/pc low.png" class="card-img-top" alt="..." width="100">
+            </a>
+            <div class="card-body bg-light">
+              <p class="card-text fw-bold mt-1">PC BUDGET LOW END Gaming & School</p>
+              <a href="#" class="btn btn-primary ms-1 me-2" data-bs-target="#produk4" data-bs-toggle="modal">Detail</a>
+              <a href="#" class="btn btn-success" data-bs-target="#beli" data-bs-toggle="modal">Rp.8.000.000</a>
+            </div>
+          </div>
+          <div class="modal fade" id="produk4" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Detail Produk</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <div class="row">
+                    <div class="col-md-5 align-items-center d-flex">
+                      <div id="baru4" class="carousel slide" data-bs-ride="true">
+                        <div class="carousel-inner">
+                          <div class="carousel-item active">
+                            <img src="img/cpu pc low.jpg" class="d-block w-100" alt="...">
+                          </div>
+                          <div class="carousel-item">
+                            <img src="img/mobo pc low.jpg" class="d-block w-100" alt="...">
+                          </div>
+                          <div class="carousel-item">
+                            <img src="img/vga pc low.jfif" class="d-block w-100" alt="...">
+                          </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#baru4" data-bs-slide="prev">
+                          <img src="img/previous.png" class="me-1"><span class="carousel-control-prev" aria-hidden="true"></span>
+                          <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#baru4" data-bs-slide="next">
+                          <img src="img/next.png" class="ms-3"><span class="carousel-control-next" aria-hidden="true"></span>
+                          <span class="visually-hidden">Next</span>
+                        </button>
+                      </div>
+                    </div>
+                    <div class="col-md-7">
+                      <table class="table table-borderless">
+                        <tr>
+                          <th>Prosessor</th>
+                          <td>AMD Ryzen 3 4100 3.8Ghz Up To 4.0Ghz Cache 4MB 65W</td>
+                        <tr>
+                        <tr>
+                          <th>Motherboard</th>
+                          <td>AASRock B450M Pro4-F R2.0</td>
+                        <tr>
+                          <th>RAM</th>
+                          <td>KLEVV DDR4 BOLT X Series 3200MHz Dual Channel 16GB (2X8GB)</td>
+                        </tr>
+                        <tr>
+                          <th>SSD</th>
+                          <td>ADATA SX6000 Lite 256GB M.2 NVME</td>
+                        </tr>
+                        <tr>
+                          <th>VGA</th>
+                          <td>MSI GeForce GTX 1050 Ti 4GB DDR5</td>
+                        </tr>
+                        <tr>
+                          <th>Casing</th>
+                          <td>Antec Draco 10 - mATX Gaming Case</td>
+                        </tr>
+                        <tr>
+                          <th>PSU</th>
+                          <td>1STPLAYER Gaming PSU DK5.0 500W, 80+ Bronze</td>
+                        </tr>
+                        <tr>
+                          <th>Cooler Fan</th>
+                          <td>CUBE GAMING FIX - Rainbow 12CM FAN </td>
+                        </tr>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Kembali</button>
+                  <button type="button" class="btn btn-success" data-bs-target="#beli" data-bs-toggle="modal">Beli</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Modal Beli -->
+          <div class="modal fade" id="beli" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-scrollable">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Beli Produk</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <form action="" name="formulir_tambah">
+                    <div class="mb-2">
+                      <label for="nama" class="form-label">Nama</label>
+                      <input type="text" class="form-control" id="nama">
+                    </div>
+                    <div class="mb-2">
+                      <label for="email" class="form-label">Email</label>
+                      <input type="email" class="form-control" id="email" name="email" required>
+                    </div>
+                    <div class="mb-2">
+                      <label for="alamat" class="form-label">Alamat Rumah</label>
+                      <textarea class="form-control" id="alamat" rows="3"></textarea>
+                    </div>
+                    <div class="mb-2">
+                      <label for="tanggal" class="form-label">Tanggal Pembelian</label>
+                      <input type="date" class="form-control" id="tanggal"required>
+                    </div>
+                    <div class="mb-2">
+                      <label for="select" class="form-label">Metode Pembayaran</label>
+                      <select class="form-select" aria-label="Default select example" name="prodi" id="prodi">
+                        <option selected>Pilih Metode Pembayaran</option>
+                        <option value="1">Bank</option>
+                        <option value="2">Virtual</option>
+                        <option value="3">Alfamart/Indomart</option>
+                      </select>
+                    </div>
+                    <div class="mb-2">
+                      <label for="foto" class="form-label">Bukti Pembayaran</label>
+                      <div>
+                        <img src="img/default.png" id="upload_foto" alt="" width="150px" class="ms-3 mb-3">
+                        <input class="form-control" type="file" id="foto" name="foto" onchange="fileValidation()" required>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Kembali</button>
+                  <button type="button" class="btn btn-primary " onclick="return cekform()">Kirim</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Modal Beli End -->
+        </div>
+      </div>
+    </div>
+  </div>
+<!-- Produk End -->
+
+<!-- Laptop -->
+<div id="laptop"><br><br><br>
+  <div class="container pt-5">
+    <button class="btn btn-primary text-left fw-bold mb-1" type="button" href="#laptop">PRODUK LAPTOP</button>
+    <div class="row">
+      <div class="col-lg-3 col-md-6 my-3">
+        <div class="card p-2">
+          <a href="img/msi1.png" target="blank">
+            <img src="img/msi1.png" class="card-img-top" alt="..." width="100">
+          </a>
+          <div class="card-body bg-light">
+            <p class="card-text fw-bold mt-1">MSI MODERN 14-B11MOU-1059</p>
+            <a href="#" class="btn btn-primary ms-1 me-2" data-bs-target="#laptop1" data-bs-toggle="modal">Detail</a>
+            <a href="#" class="btn btn-success" data-bs-target="#beli" data-bs-toggle="modal">Rp.10.999.000</a>
+          </div>
+        </div>
+        <div class="modal fade" id="laptop1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Detail Produk</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <div class="row">
+                  <div class="col-md-5 align-items-center d-flex">
+                    <div id="msi1" class="carousel slide" data-bs-ride="true">
+                      <div class="carousel-inner">
+                        <div class="carousel-item active">
+                          <img src="img/msi1.png" class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                          <img src="img/msi2.jpg" class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                          <img src="img/msi3.jpg" class="d-block w-100" alt="...">
+                        </div>
+                      </div>
+                      <button class="carousel-control-prev" type="button" data-bs-target="#msi1" data-bs-slide="prev">
+                        <img src="img/previous.png" class="me-1"><span class="carousel-control-prev" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                      </button>
+                      <button class="carousel-control-next" type="button" data-bs-target="#msi1" data-bs-slide="next">
+                        <img src="img/next.png" class="ms-3"><span class="carousel-control-next" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                      </button>
+                    </div>
+                  </div>
+                  <div class="col-md-7">
+                    <table class="table table-borderless">
+                      <tr>
+                        <th>Nama</th>
+                        <td>MSI MODERN 14-B11MOU-1059</td>
+                      </tr>
+                      <tr>
+                        <th>Prosessor</th>
+                        <td>Intel® Core™ i7-1195G7 Processor 12M Cache, up to 5.00 GHz
+                      <tr>
+                        <th>RAM</th>
+                        <td>DDR IV 8GB</td>
+                      </tr>
+                      <tr>
+                        <th>SSD</th>
+                        <td>512GB NVMe PCIe SSD</td>
+                      </tr>
+                      <tr>
+                        <th>VGA</th>
+                        <td>Intel® Iris® Xe graphics</td>
+                      </tr>
+                      <tr>
+                        <th>Layar</th>
+                        <td>14" FHD (1920*1080), IPS-Level 60Hz</td>
+                      </tr>
+                      <tr>
+                        <th>Baterai</th>
+                        <td>3 cell , 52Whr</td>
+                      </tr>
+                      <tr>
+                        <th>Berat</th>
+                        <td>1.3 kg</td>
+                      </tr>
+                      <tr>
+                        <th>Windows</th>
+                        <td>Windows 11 Home</td>
+                      </tr>
+                    </table>
+                  </div>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Kembali</button>
+                <button type="button" class="btn btn-success" data-bs-target="#beli" data-bs-toggle="modal">Beli</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+       <div class="col-lg-3 col-md-6 my-3">
+        <div class="card p-2">
+          <a href="img/acer1.jpg" target="blank">
+            <img src="img/acer1.jpg" class="card-img-top" alt="..." width="100">
+          </a>  
+          <div class="card-body bg-light">
+            <p class="card-text fw-bold mt-1">Acer Nitro 5 (AN515-56) BLIT BLK-57.52BQ</p>
+            <a href="#" class="btn btn-primary ms-1 me-2" data-bs-target="#laptop2" data-bs-toggle="modal">Detail</a>
+            <a href="#" class="btn btn-success" data-bs-target="#beli" data-bs-toggle="modal">Rp.12.500.000</a>
+          </div>
+        </div>
+        <div class="modal fade" id="laptop2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Detail Produk</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <div class="row">
+                  <div class="col-md-5 align-items-center d-flex">
+                    <div id="acer" class="carousel slide" data-bs-ride="true">
+                      <div class="carousel-inner">
+                        <div class="carousel-item active">
+                          <img src="img/acer1.jpg" class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                          <img src="img/acer2.png" class="d-block w-100 mt-5" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                          <img src="img/acer3.jpg" class="d-block w-100" alt="...">
+                        </div>
+                      </div>
+                      <button class="carousel-control-prev" type="button" data-bs-target="#acer" data-bs-slide="prev">
+                        <img src="img/previous.png" class="me-1"><span class="carousel-control-prev" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                      </button>
+                      <button class="carousel-control-next" type="button" data-bs-target="#acer" data-bs-slide="next">
+                        <img src="img/next.png" class="ms-3"><span class="carousel-control-next" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                      </button>
+                    </div>
+                  </div>
+                  <div class="col-md-7">
+                    <table class="table table-borderless">
+                      <tr>
+                        <th>Nama</th>
+                        <td>Acer Nitro 5 (AN515-56) BLIT BLK-57.52BQ</td>
+                      </tr>
+                      <tr>
+                        <th>Prosessor</th>
+                        <td>Intel® Core™ i5-11400H Up to 4.50Ghz)</td>
+                      <tr>
+                        <th>RAM</th>
+                        <td> 8GB DDR4 3200MHz Dual-Channel</td>
+                      </tr>
+                      <tr>
+                        <th>SSD</th>
+                        <td>512 GB SSD PCIe NVMe</td>
+                      </tr>
+                      <tr>
+                        <th>VGA</th>
+                        <td>NVIDIA® GeForce RTX 3050 with 4GB of GDDR6</td>
+                      </tr>
+                      <tr>
+                        <th>Layar</th>
+                        <td>15.6" FHD LED IPS 144Hz</td>
+                      </tr>
+                      <tr>
+                        <th>Baterai</th>
+                        <td>135w / 180w</td>
+                      </tr>
+                      <tr>
+                        <th>Berat</th>
+                        <td>2.3 kg</td>
+                      </tr>
+                      <tr>
+                        <th>Windows</th>
+                        <td>Windows 10 Home + Office Home & Student 2021</td>
+                      </tr>
+                    </table>
+                  </div>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Kembali</button>
+                <button type="button" class="btn btn-success" data-bs-target="#beli" data-bs-toggle="modal">Beli</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-3 col-md-6 my-3">
+        <div class="card p-2">
+          <a href="img/legion1.jpg" target="blank">
+            <img src="img/legion1.jpg" class="card-img-top" alt="..." width="100">
+          </a>
+          <div class="card-body bg-light" >
+            <p class="card-text fw-bold mt-1">Lenovo Legion 7 16ACHG6 9TID Storm Gray</p>
+            <a href="#" class="btn btn-primary ms-1 me-2" data-bs-target="#laptop3" data-bs-toggle="modal">Detail</a>
+            <a href="#" class="btn btn-success " data-bs-target="#beli" data-bs-toggle="modal">Rp.33.300.000</a>
+          </div>
+        </div>
+        <div class="modal fade" id="laptop3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Detail Produk</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <div class="row">
+                  <div class="col-md-5 align-items-center d-flex">
+                    <div id="legion7" class="carousel slide" data-bs-ride="true">
+                      <div class="carousel-inner">
+                        <div class="carousel-item active">
+                          <img src="img/legion1.jpg" class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                          <img src="img/legion5.jpg" class="d-block w-100 mt-5" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                          <img src="img/legion3.jpg" class="d-block w-100" alt="...">
+                        </div>
+                      </div>
+                      <button class="carousel-control-prev" type="button" data-bs-target="#legion7" data-bs-slide="prev">
+                        <img src="img/previous.png" class="me-1"><span class="carousel-control-prev" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                      </button>
+                      <button class="carousel-control-next" type="button" data-bs-target="#legion7" data-bs-slide="next">
+                        <img src="img/next.png" class="ms-3"><span class="carousel-control-next" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                      </button>
+                    </div>
+                  </div>
+                  <div class="col-md-7">
+                    <table class="table table-borderless">
+                      <tr>
+                        <th>Nama</th>
+                        <td>Lenovo Legion 7 16ACHG6 9TID Storm Gray</td>
+                      </tr>
+                      <tr>
+                        <th>Prosessor</th>
+                        <td>AMD Ryzen 7 5800H</td>
+                      <tr>
+                        <th>RAM</th>
+                        <td>32GB SO-DIMM DDR4-3200 Up to 32GB DDR4-3200</td>
+                      </tr>
+                      <tr>
+                        <th>SSD</th>
+                        <td>2TB SSD M.2 2280 PCIe 3.0x4 NVMe</td>
+                      </tr>
+                      <tr>
+                        <th>VGA</th>
+                        <td>NVIDIA GeForce RTX 3070 8GB GDDR6</td>
+                      </tr>
+                      <tr>
+                        <th>Layar</th>
+                        <td>16" WQXGA (2560x1600) IPS, 165Hz, 100% sRGB</td>
+                      </tr>
+                      <tr>
+                        <th>Baterai</th>
+                        <td>Integrated 80Wh</td>
+                      </tr>
+                      <tr>
+                        <th>Berat</th>
+                        <td>2.5 kg</td>
+                      </tr>
+                      <tr>
+                        <th>Windows</th>
+                        <td>Windows 10 Home + Office Home and Student 2019</td>
+                      </tr>
+                    </table>
+                  </div>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Kembali</button>
+                <button type="button" class="btn btn-success" data-bs-target="#beli" data-bs-toggle="modal">Beli</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-lg-3 col-md-6 my-3">
+        <div class="card p-2">
+          <a href="img/asus1.png" target="blank">
+            <img src="img/asus1.png" class="card-img-top" alt="..." width="100">
+          </a>
+          <div class="card-body bg-light">
+            <p class="card-text fw-bold mt-1">Asus ROG Zephyrus Duo GX551QS R938E6TO</p>
+            <a href="#" class="btn btn-primary ms-1 me-2" data-bs-target="#laptop4" data-bs-toggle="modal">Detail</a>
+            <a href="#" class="btn btn-success" data-bs-target="#beli" data-bs-toggle="modal">Rp.66.900.000</a>
+          </div>
+        </div>
+        <div class="modal fade" id="laptop4" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Detail Produk</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <div class="row">
+                  <div class="col-md-5 align-items-center d-flex">
+                    <div id="asus1" class="carousel slide" data-bs-ride="true">
+                      <div class="carousel-inner">
+                        <div class="carousel-item active">
+                          <img src="img/asus1.png" class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                          <img src="img/asus2.jpg" class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                          <img src="img/asus3.jpg" class="d-block w-100" alt="...">
+                        </div>
+                      </div>
+                      <button class="carousel-control-prev" type="button" data-bs-target="#asus1" data-bs-slide="prev">
+                        <img src="img/previous.png" class="me-1"><span class="carousel-control-prev" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                      </button>
+                      <button class="carousel-control-next" type="button" data-bs-target="#asus1" data-bs-slide="next">
+                        <img src="img/next.png" class="ms-3"><span class="carousel-control-next" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                      </button>
+                    </div>
+                  </div>
+                  <div class="col-md-7">
+                    <table class="table table-borderless">
+                      <tr>
+                        <th>Nama</th>
+                        <td>Asus ROG Zephyrus Duo GX551QS R938E6TO</td>
+                      </tr>
+                      <tr>
+                        <th>Prosessor</th>
+                        <td>MD Ryzen™ 9 5900HX Processor 3.3 GHz</td>
+                      <tr>
+                        <th>RAM</th>
+                        <td>16GB DDR4 on board + 16GB DDR4-3200 SO-DIMM</td>
+                      </tr>
+                      <tr>
+                        <th>SSD</th>
+                        <td>1TB + 1TB M.2 NVMe™ PCIe</td>
+                      </tr>
+                      <tr>
+                        <th>VGA</th>
+                        <td>NVIDIA® GeForce RTX™ 3080 16GB</td>
+                      </tr>
+                      <tr>
+                        <th>Layar</th>
+                        <td>15.6-inch 4K UHD (3840 x 2160) 120Hz 16:9 400 anti-glare IPS</td>
+                      </tr>
+                      <tr>
+                        <th>Baterai</th>
+                        <td>3 cell , 52Whr</td>
+                      </tr>
+                      <tr>
+                        <th>Berat</th>
+                        <td>2 kg</td>
+                      </tr>
+                      <tr>
+                        <th>Windows</th>
+                        <td>Windows 10 Home</td>
+                      </tr>
+                    </table>
+                  </div>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Kembali</button>
+                <button type="button" class="btn btn-success" data-bs-target="#beli" data-bs-toggle="modal">Beli</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Modal Beli -->
+        <div class="modal fade" id="beli" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-scrollable">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Beli Produk</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <form action="" name="formulir_tambah">
+                  <div class="mb-2">
+                    <label for="nama" class="form-label">Nama</label>
+                    <input type="text" class="form-control" id="nama">
+                  </div>
+                  <div class="mb-2">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="email" name="email" required>
+                  </div>
+                  <div class="mb-2">
+                    <label for="alamat" class="form-label">Alamat Rumah</label>
+                    <textarea class="form-control" id="alamat" rows="3"></textarea>
+                  </div>
+                  <div class="mb-2">
+                    <label for="tanggal" class="form-label">Tanggal Pembelian</label>
+                    <input type="date" class="form-control" id="tanggal"required>
+                  </div>
+                  <div class="mb-2">
+                    <label for="select" class="form-label">Metode Pembayaran</label>
+                    <select class="form-select" aria-label="Default select example" name="prodi" id="prodi">
+                      <option selected>Pilih Metode Pembayaran</option>
+                      <option value="1">Bank</option>
+                      <option value="2">Virtual</option>
+                      <option value="3">Alfamart/Indomart</option>
+                    </select>
+                  </div>
+                  <div class="mb-2">
+                    <label for="foto" class="form-label">Bukti Pembayaran</label>
+                    <div>
+                      <img src="img/default.png" id="upload_foto" alt="" width="150px" class="ms-3 mb-3">
+                      <input class="form-control" type="file" id="foto" name="foto" onchange="fileValidation()" required>
+                    </div>
+                  </div>
+                </form>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Kembali</button>
+                <button type="button" class="btn btn-primary " onclick="return cekform()">Kirim</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Modal Beli End -->
+      </div>
+    </div>
+    <ul class="pagination justify-content-end">
+      <li class="page-item">
+        <a class="page-link" href="#produk" aria-label="Previous">
+          <span aria-hidden="true">&laquo;</span>
+        </a>
+      </li>
+      <li class="page-item"><a class="page-link" href="#produk">1</a></li>
+      <li class="page-item"><a class="page-link" href="#pc">2</a></li>
+      <li class="page-item"><a class="page-link" href="#produklainnya">3</a></li>
+      <li class="page-item">
+        <a class="page-link" href="#pc" aria-label="Next">
+          <span aria-hidden="true">&raquo;</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
+<!-- Laptop End -->
+
+<!-- PC -->
+<div id="pc"><br><br><br>
+  <div class="container pt-5">
+    <button class="btn btn-primary text-left fw-bold mb-1" type="button" href="#pc">REKOMENDASI RAKIT PC</button>
+    <div class="row">
+      <div class="col-lg-3 col-md-6 my-3">
+        <div class="card p-2">
+          <a href="img/pc low.png" target="blank">
+            <img src="img/pc low.png" class="card-img-top" alt="..." width="100">
+          </a>
+          <div class="card-body bg-light">
+            <p class="card-text fw-bold mt-1">PC BUDGET LOW END Gaming & School </p>
+            <a href="#" class="btn btn-primary ms-1 me-2" data-bs-target="#pc1" data-bs-toggle="modal">Detail</a>
+            <a href="#" class="btn btn-success" data-bs-target="#beli" data-bs-toggle="modal">Rp.8.000.000</a>
+          </div>
+        </div>
+        <div class="modal fade" id="pc1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Detail Produk</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <div class="row">
+                  <div class="col-md-5 align-items-center d-flex">
+                    <div id="pclow1" class="carousel slide" data-bs-ride="true">
+                      <div class="carousel-inner">
+                        <div class="carousel-item active">
+                          <img src="img/cpu pc low.jpg" class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                          <img src="img/mobo pc low.jpg" class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                          <img src="img/vga pc low.jfif" class="d-block w-100" alt="...">
+                        </div>
+                      </div>
+                      <button class="carousel-control-prev" type="button" data-bs-target="#pclow1" data-bs-slide="prev">
+                        <img src="img/previous.png" class="me-1"><span class="carousel-control-prev" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                      </button>
+                      <button class="carousel-control-next" type="button" data-bs-target="#pclow1" data-bs-slide="next">
+                        <img src="img/next.png" class="ms-3"><span class="carousel-control-next" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                      </button>
+                    </div>
+                  </div>
+                  <div class="col-md-7">
+                    <table class="table table-borderless">
+                      <tr>
+                        <th>Prosessor</th>
+                        <td>AMD Ryzen 3 4100 3.8Ghz Up To 4.0Ghz Cache 4MB 65W</td>
+                      <tr>
+                      <tr>
+                        <th>Motherboard</th>
+                        <td>AASRock B450M Pro4-F R2.0</td>
+                      <tr>
+                        <th>RAM</th>
+                        <td>KLEVV DDR4 BOLT X Series 3200MHz Dual Channel 16GB (2X8GB)</td>
+                      </tr>
+                      <tr>
+                        <th>SSD</th>
+                        <td>ADATA SX6000 Lite 256GB M.2 NVME</td>
+                      </tr>
+                      <tr>
+                        <th>VGA</th>
+                        <td>MSI GeForce GTX 1050 Ti 4GB DDR5</td>
+                      </tr>
+                      <tr>
+                        <th>Casing</th>
+                        <td>Antec Draco 10 - mATX Gaming Case</td>
+                      </tr>
+                      <tr>
+                        <th>PSU</th>
+                        <td>1STPLAYER Gaming PSU DK5.0 500W, 80+ Bronze</td>
+                      </tr>
+                      <tr>
+                        <th>Cooler Fan</th>
+                        <td>CUBE GAMING FIX - Rainbow 12CM FAN </td>
+                      </tr>
+                    </table>
+                  </div>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Kembali</button>
+                <button type="button" class="btn btn-success" data-bs-target="#beli" data-bs-toggle="modal">Beli</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-3 col-md-6 my-3">
+        <div class="card p-2">
+          <a href="img/pc mid.jpg" target="blank">
+            <img src="img/pc mid.jpg" class="card-img-top" alt="..." width="100">
+          </a>  
+          <div class="card-body bg-light" >
+            <p class="card-text fw-bold mt-1">PC MID END GALLANT Gaming E-Sport</p>
+            <a href="#" class="btn btn-primary ms-1 me-2" data-bs-target="#pc2" data-bs-toggle="modal">Detail</a>
+            <a href="#" class="btn btn-success" data-bs-target="#beli" data-bs-toggle="modal">Rp.13.400.000</a>
+          </div>
+        </div>
+        <div class="modal fade" id="pc2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Detail Produk</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <div class="row">
+                  <div class="col-md-5 align-items-center d-flex">
+                    <div id="pcmid1" class="carousel slide" data-bs-ride="true">
+                      <div class="carousel-inner">
+                        <div class="carousel-item active">
+                          <img src="img/cpu pc mid.jpg" class="d-block w-100" alt="..." width="50">
+                        </div>
+                        <div class="carousel-item">
+                          <img src="img/mobo pc low.jpg" class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                          <img src="img/vga pc mid.png" class="d-block w-100" alt="...">
+                        </div>
+                      </div>
+                      <button class="carousel-control-prev" type="button" data-bs-target="#pcmid1" data-bs-slide="prev">
+                        <img src="img/previous.png" class="me-1"><span class="carousel-control-prev" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                      </button>
+                      <button class="carousel-control-next" type="button" data-bs-target="#pcmid1" data-bs-slide="next">
+                        <img src="img/next.png" class="ms-3"><span class="carousel-control-next" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                      </button>
+                    </div>
+                  </div>
+                  <div class="col-md-7">
+                    <table class="table table-borderless">
+                      <tr>
+                        <th>Prosessor</th>
+                        <td>Intel Core i5-10400F 2.9Ghz Up To 4.3Ghz</td>
+                      <tr>
+                      <tr>
+                        <th>Motherboard</th>
+                        <td>ASRock B560M Steel Legend </td>
+                      <tr>
+                        <th>RAM</th>
+                        <td>GEIL DDR4 SUPER LUCE SYNC RGB LED 3200MHz Dual Channel 16GB (2x8GB)</td>
+                      </tr>
+                      <tr>
+                        <th>SSD</th>
+                        <td>ADATA LEGEND 740 250GB NVME PCIe</td>
+                      </tr>
+                      <tr>
+                        <th>VGA</th>
+                        <td>GALAX Geforce RTX 2060 12GB DDR6 OC - DUAL FAN</td>
+                      </tr>
+                      <tr>
+                        <th>Casing</th>
+                        <td>CUBE GAMING RADAL TEMPERED GLASS (ATX)</td>
+                      </tr>
+                      <tr>
+                        <th>PSU</th>
+                        <td>Antec ATOM B650 650W 80+ Bronze</td>
+                      </tr>
+                      <tr>
+                        <th>Cooler Fan</th>
+                        <td>CUBE GAMING INDIGO, RGB RAINBOW STATIC FAN 12CM</td>
+                      </tr>
+                    </table>
+                  </div>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Kembali</button>
+                <button type="button" class="btn btn-success" data-bs-target="#beli" data-bs-toggle="modal">Beli</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-lg-3 col-md-6 my-3">
+        <div class="card p-2">
+          <a href="img/pc high.png" target="blank">
+            <img src="img/pc high.png" class="card-img-top" alt="..." width="100">
+          </a>
+          <div class="card-body bg-light" >
+            <p class="card-text fw-bold mt-1">PC HIGH END KILLER Master Gaming</p>
+            <a href="#" class="btn btn-primary ms-1 me-2" data-bs-target="#pc3" data-bs-toggle="modal">Detail</a>
+            <a href="#" class="btn btn-success" data-bs-target="#beli" data-bs-toggle="modal">Rp.26.284.000</a>
+          </div>
+        </div>
+        <div class="modal fade" id="pc3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Detail Produk</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <div class="row">
+                  <div class="col-md-5 align-items-center d-flex">
+                    <div id="pchigh1" class="carousel slide" data-bs-ride="true">
+                      <div class="carousel-inner">
+                        <div class="carousel-item active">
+                          <img src="img/cpu pc high.jpg" class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                          <img src="img/mobo pc high.png" class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                          <img src="img/vga pc high.jpg" class="d-block w-100" alt="...">
+                        </div>
+                      </div>
+                      <button class="carousel-control-prev" type="button" data-bs-target="#pchigh1" data-bs-slide="prev">
+                        <img src="img/previous.png" class="me-1"><span class="carousel-control-prev" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                      </button>
+                      <button class="carousel-control-next" type="button" data-bs-target="#pchigh1" data-bs-slide="next">
+                        <img src="img/next.png" class="ms-3"><span class="carousel-control-next" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                      </button>
+                    </div>
+                  </div>
+                  <div class="col-md-7">
+                    <table class="table table-borderless">
+                      <tr>
+                        <th>Prosessor</th>
+                        <td>AMD Ryzen 7 5800X 3.8Ghz Up To 4.7Ghz Cache 32MB</td>
+                      <tr>
+                      <tr>
+                        <th>Motherboard</th>
+                        <td>ASRock X570 Steel Legend</td>
+                      <tr>
+                        <th>RAM</th>
+                        <td>KLEVV DDR4 BOLT XR Series PC28800 3600MHz Dual Channel 32GB (2X16GB)</td>
+                      </tr>
+                      <tr>
+                        <th>SSD</th>
+                        <td>MSI Spatium M.2 NVMe PCIe 500GB</td>
+                      </tr>
+                      <tr>
+                        <th>VGA</th>
+                        <td>GALAX Geforce RTX 3070 Ti 8GB DDR6X (1-Click OC) - DUAL FAN</td>
+                      </tr>
+                      <tr>
+                        <th>Casing</th>
+                        <td>Antec DF600 FLUX, 4mm Tempered Glass Side Panel</td>
+                      </tr>
+                      <tr>
+                        <th>PSU</th>
+                        <td>Antec High Current Gamer 850W, 80+ Gold</td>
+                      </tr>
+                      <tr>
+                        <th>Cooler Fan</th>
+                        <td>be quiet!PURE LOOP 280mm</td>
+                      </tr>
+                    </table>
+                  </div>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Kembali</button>
+                <button type="button" class="btn btn-success" data-bs-target="#beli" data-bs-toggle="modal">Beli</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-3 col-md-6 my-3">
+        <div class="card p-2">
+          <a href="img/pc dewa1.jpg" target="blank">
+            <img src="img/pc dewa1.jpg" class="card-img-top" alt="..." width="100">
+          </a>
+          <div class="card-body bg-light">
+            <p class="card-text fw-bold mt-1">PC HIGH END Gaming E-Sport Freeze</p>
+            <a href="#" class="btn btn-primary ms-1 me-2" data-bs-target="#pc4" data-bs-toggle="modal">Detail</a>
+            <a href="#" class="btn btn-success " data-bs-target="#beli" data-bs-toggle="modal">Rp.39.845.000</a>
+          </div>
+        </div>
+        <div class="modal fade" id="pc4" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Detail Produk</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <div class="row">
+                  <div class="col-md-5 align-items-center d-flex">
+                    <div id="pcdewa1" class="carousel slide" data-bs-ride="true">
+                      <div class="carousel-inner">
+                        <div class="carousel-item active">
+                          <img src="img/cpu pc dewa.jpg" class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                          <img src="img/pc dewa.jpg" class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                          <img src="img/vga pc dewa.jpg" class="d-block w-100" alt="...">
+                        </div>
+                      </div>
+                      <button class="carousel-control-prev" type="button" data-bs-target="#pcdewa1" data-bs-slide="prev">
+                        <img src="img/previous.png" class="me-1"><span class="carousel-control-prev" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                      </button>
+                      <button class="carousel-control-next" type="button" data-bs-target="#pcdewa1" data-bs-slide="next">
+                        <img src="img/next.png" class="ms-3"><span class="carousel-control-next" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                      </button>
+                    </div>
+                  </div>
+                  <div class="col-md-7">
+                    <table class="table table-borderless">
+                     <tr>
+                        <th>Prosessor</th>
+                        <td>Intel Core i7-12700K 3.6GHz Up To 5.0GHz</td>
+                      <tr>
+                      <tr>
+                        <th>Motherboard</th>
+                        <td>MSI MAG Z690 Tomahawk WiFi </td>
+                      <tr>
+                        <th>RAM</th>
+                        <td>ADATA DDR5 XPG CASTER PC48000 6000MHz 32GB (2X16GB) Dual Channel</td>
+                      </tr>
+                      <tr>
+                        <th>SSD</th>
+                        <td>Samsung SSD 980 PRO M.2 PCIe 500GB</td>
+                      </tr>
+                      <tr>
+                        <th>VGA</th>
+                        <td>MSI GeForce RTX 3080 12GB GDDR6X OC-LHR</td>
+                      </tr>
+                      <tr>
+                        <th>Casing</th>
+                        <td>LIAN LI LANCOOL 205 MESH WHITE, SIDE TEMPERED GLASS</td>
+                      </tr>
+                      <tr>
+                        <th>PSU</th>
+                        <td>Seasonic Focus Gold GX-850 WHITE EDITION 850W Full Modular, 80+ Gold</td>
+                      </tr>
+                      <tr>
+                        <th>Cooler Fan</th>
+                        <td>PRIME POLAR 240T V2.0 ARGB White Version Liquid Cooler</td>
+                      </tr>
+                    </table>
+                  </div>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Kembali</button>
+                <button type="button" class="btn btn-success" data-bs-target="#beli" data-bs-toggle="modal">Beli</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+<!-- PC end -->
+
+<!-- Produk Lainnya -->
+  <div class="produklain pt-5" id="produklainnya">
+  <button class="btn btn-primary text-left fw-bold mb-1" type="button" href="#porduklain">PRODUK LAINNYA</button>
+    <div class="row">
+      <div class="col-lg-3 col-md-6 my-3">
+        <div class="card p-2">
+          <a href="img/router1.jpg" target="blank">
+            <img src="img/router1.jpg" class="card-img-top" alt="..." width="100">
+          </a>
+          <div class="card-body bg-light">
+            <p class="card-text fw-bold mt-1">TP-Link Archer AX73 AX5400 Wi-Fi 6 Router</p>
+            <a href="#" class="btn btn-primary ms-1 me-2" data-bs-target="#lain1" data-bs-toggle="modal">Detail</a>
+            <a href="#" class="btn btn-success" data-bs-target="#beli" data-bs-toggle="modal">Rp 1.698.000</a>
+          </div>
+        </div>
+        <div class="modal fade" id="lain1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Detail Produk</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <div class="row">
+                  <div class="col-md-5 align-items-center d-flex">
+                    <div id="plain1" class="carousel slide" data-bs-ride="true">
+                      <div class="carousel-inner">
+                        <div class="carousel-item active">
+                          <img src="img/router1.jpg" class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                          <img src="img/router2.jpg" class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                          <img src="img/router3.jpg" class="d-block w-100" alt="...">
+                        </div>
+                      </div>
+                      <button class="carousel-control-prev" type="button" data-bs-target="#plain1" data-bs-slide="prev">
+                        <img src="img/previous.png" class="me-1"><span class="carousel-control-prev" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                      </button>
+                      <button class="carousel-control-next" type="button" data-bs-target="#plain1" data-bs-slide="next">
+                        <img src="img/next.png" class="ms-3"><span class="carousel-control-next" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                      </button>
+                    </div>
+                  </div>
+                  <div class="col-md-7">
+                    <table class="table table-borderless">
+                      <tr>
+                        <th>Gigabit WiFi for 8K Streaming</th>
+                        <td>5400 Mbps WiFi for faster browsing, streamings, and downloading, all at the same time</td>
+                      <tr>
+                        <th>Connect 200+ Devices</th>
+                        <td>Equipped with the top structure of 4T4R and HE160 on the 5 GHz band to enable 4.8 Gbps ultra-fast connections.</td>
+                      </tr>
+                      <tr>
+                        <th>Up to 4x More Capacity</th>
+                        <td>Supports MU-MIMO and OFDMA to reduce congestion and quadruple the average throughput.</td>
+                      </tr>
+                      <tr>
+                        <th>USB Sharing</th>
+                        <td>1× USB 3.0 port enables easy media sharing and private cloud building.</td>
+                      </tr>
+                      <tr>
+                        <th>HomeShield</th>
+                        <td>TP-Link's premium security service keeps your home network safe with cutting-edge features for network and IoT protection.</td>
+                      </tr>
+                    </table>
+                  </div>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Kembali</button>
+                <button type="button" class="btn btn-success" data-bs-target="#beli" data-bs-toggle="modal">Beli</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-3 col-md-6 my-3">
+        <div class="card p-2">
+          <a href="img/ubi2.jpg" target="blank">
+            <img src="img/ubi2.jpg" class="card-img-top" alt="..." width="100">
+          </a>  
+          <div class="card-body bg-light" >
+            <p class="card-text fw-bold mt-1">Ubiquiti Unifi AC Lite / UAP AC LITE</p>
+            <a href="#" class="btn btn-primary ms-1 me-2" data-bs-target="#produklain2" data-bs-toggle="modal">Detail</a>
+            <a href="#" class="btn btn-success" data-bs-target="#beli" data-bs-toggle="modal">Rp1.350.000</a>
+          </div>
+        </div>
+        <div class="modal fade" id="produklain2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Detail Produk</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <div class="row">
+                  <div class="col-md-5 align-items-center d-flex">
+                    <div id="lain2" class="carousel slide" data-bs-ride="true">
+                      <div class="carousel-inner">
+                        <div class="carousel-item active">
+                          <img src="img/ubi1.jpg" class="d-block w-100" alt="..." width="50">
+                        </div>
+                        <div class="carousel-item">
+                          <img src="img/ubi2.jpg" class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                          <img src="img/ubi3.jpg" class="d-block w-100" alt="...">
+                        </div>
+                      </div>
+                      <button class="carousel-control-prev" type="button" data-bs-target="#lain2" data-bs-slide="prev">
+                        <img src="img/previous.png" class="me-1"><span class="carousel-control-prev" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                      </button>
+                      <button class="carousel-control-next" type="button" data-bs-target="#lain2" data-bs-slide="next">
+                        <img src="img/next.png" class="ms-3"><span class="carousel-control-next" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                      </button>
+                    </div>
+                  </div>
+                  <div class="col-md-7">
+                    <table class="table table-borderless">
+                      <tr>
+                        <th>Nama</th>
+                        <td>Ubiquiti Unifi AC Lite / UAP AC LITE</td>
+                      <tr>
+                      <tr>
+                        <th>Networking Interface</th>
+                        <td>(1) 10/100/1000 Ethernet Port</td>
+                      <tr>
+                        <th>Wireless Security</th>
+                        <td>WEP, WPA-PSK, WPA-Enterprise (WPA/WPA2, TKIP/AES)</td>
+                      </tr>
+                      <tr>
+                        <th>Dimensions</th>
+                        <td>160 x 160 x 31.45 mm (6.30 x 6.30 x 1.24")</td>
+                      </tr>
+                      <tr>
+                        <th>VGA</th>
+                        <td>GALAX Geforce RTX 2060 12GB DDR6 OC - DUAL FAN</td>
+                      </tr>
+                      <tr>
+                        <th> Power Supply </th>
+                        <td>24V, 0.5A Gigabit PoE Adapter</td>
+                      </tr>
+                    </table>
+                  </div>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Kembali</button>
+                <button type="button" class="btn btn-success" data-bs-target="#beli" data-bs-toggle="modal">Beli</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-lg-3 col-md-6 my-3">
+        <div class="card p-2">
+          <a href="img/repeater1.jpg" target="blank">
+            <img src="img/repeater1.jpg" class="card-img-top" alt="..." width="100">
+          </a>
+          <div class="card-body bg-light" >
+            <p class="card-text fw-bold mt-1">TP-Link RE305 AC1200 Wi-Fi Range Extender</p>
+            <a href="#" class="btn btn-primary ms-1 me-2" data-bs-target="#produklain3" data-bs-toggle="modal">Detail</a>
+            <a href="#" class="btn btn-success" data-bs-target="#beli" data-bs-toggle="modal">Rp 342.000</a>
+          </div>
+        </div>
+        <div class="modal fade" id="produklain3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Detail Produk</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <div class="row">
+                  <div class="col-md-5 align-items-center d-flex">
+                    <div id="lain3" class="carousel slide" data-bs-ride="true">
+                      <div class="carousel-inner">
+                        <div class="carousel-item active">
+                          <img src="img/repeater1.jpg" class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                          <img src="img/repeater2.jpg" class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                          <img src="img/repeater3.jpg" class="d-block w-100" alt="...">
+                        </div>
+                      </div>
+                      <button class="carousel-control-prev" type="button" data-bs-target="#lain3" data-bs-slide="prev">
+                        <img src="img/previous.png" class="me-1"><span class="carousel-control-prev" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                      </button>
+                      <button class="carousel-control-next" type="button" data-bs-target="#lain3" data-bs-slide="next">
+                        <img src="img/next.png" class="ms-3"><span class="carousel-control-next" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                      </button>
+                    </div>
+                  </div>
+                  <div class="col-md-7">
+                    <table class="table table-borderless">
+                      <tr>
+                        <th>Nama</th>
+                        <td>TP-Link RE305 AC1200 Wi-Fi Range Extender</td>
+                      <tr>
+                      <tr>
+                        <th>Bandwith</th>
+                        <td>2.4GHz:Up to 300Mpbs</td>
+                      <tr>
+                        <th>Frequency</th>
+                        <td>2.4GHz & 5GHz(11ac</td>
+                      </tr>
+                      <tr>
+                        <th>Signal Rate</th>
+                        <td>5GHz:Up to 867Mbps</td>
+                      </tr>
+                      <tr>
+                        <th>Security</th>
+                        <td>Wireless Security 64/128-bit WEP, WPA-PSK / WPA2-PSK</td>
+                      </tr>
+                      <tr>
+                        <th>Dimensions</th>
+                        <td>( W x D x H ) 3.1 x 3.0 x 3.0 in. (80 x 78 x 77mm)</td>
+                      </tr>
+                    </table>
+                  </div>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Kembali</button>
+                <button type="button" class="btn btn-success" data-bs-target="#beli" data-bs-toggle="modal">Beli</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-3 col-md-6 my-3">
+        <div class="card p-2">
+          <a href="img/kabel.jpg" target="blank">
+            <img src="img/kabel.jpg" class="card-img-top" alt="..." width="100">
+          </a>
+          <div class="card-body bg-light">
+            <p class="card-text fw-bold mt-1">Kabel LAN RJ45 UTP Ethernet</p>
+            <a href="#" class="btn btn-primary ms-1 me-2" data-bs-target="#produklain4" data-bs-toggle="modal">Detail</a>
+            <a href="#" class="btn btn-success " data-bs-target="#beli" data-bs-toggle="modal">Rp.20.000</a>
+          </div>
+        </div>
+        <div class="modal fade" id="produklain4" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Detail Produk</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <div class="row">
+                  <div class="col-md-5 align-items-center d-flex">
+                    <div id="lain4" class="carousel slide" data-bs-ride="true">
+                      <div class="carousel-inner">
+                        <div class="carousel-item active">
+                          <img src="img/kabel.jpg" class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                          <img src="img/kabel1.jpg" class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                          <img src="img/kabel3.jpg" class="d-block w-100" alt="...">
+                        </div>
+                      </div>
+                      <button class="carousel-control-prev" type="button" data-bs-target="#lain4" data-bs-slide="prev">
+                        <img src="img/previous.png" class="me-1"><span class="carousel-control-prev" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                      </button>
+                      <button class="carousel-control-next" type="button" data-bs-target="#lain4" data-bs-slide="next">
+                        <img src="img/next.png" class="ms-3"><span class="carousel-control-next" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                      </button>
+                    </div>
+                  </div>
+                  <div class="col-md-7">
+                    <table class="table table-borderless">
+                     <tr>
+                        <th>Nama</th>
+                        <td>Intel Core i7-12700K 3.6GHz Up To 5.0GHz</td>
+                      <tr>
+                      <tr>
+                        <th>Length</th>
+                        <td>1.5M 3M 5M 10M 20M 30M 50M</td>
+                      <tr>
+                        <th>Type Cable</th>
+                        <td>Cat6</td>
+                      </tr>
+                      <tr>
+                        <th>Speed</th>
+                        <td>Up to 1Gbps</td>
+                      </tr>
+                      <tr>
+                        <th>VGA</th>
+                        <td>MSI GeForce RTX 3080 12GB GDDR6X OC-LHR</td>
+                      </tr>
+                    </table>
+                  </div>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Kembali</button>
+                <button type="button" class="btn btn-success" data-bs-target="#beli" data-bs-toggle="modal">Beli</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    <ul class="pagination justify-content-end">
+      <li class="page-item">
+        <a class="page-link" href="#pc" aria-label="Previous">
+          <span aria-hidden="true">&laquo;</span>
+        </a>
+      </li>
+      <li class="page-item"><a class="page-link" href="#laptop">1</a></li>
+      <li class="page-item"><a class="page-link" href="#pc">2</a></li>
+      <li class="page-item">
+        <a class="page-link" href="#kontak" aria-label="Next">
+          <span aria-hidden="true">&raquo;</span>
+        </a>
+      </li>
+    </ul>
+</div>
+</div>
+<!-- Produk Lain End -->
+
+<!-- Kontak -->
+<div id="kontak"><br><br><br>
+<div data-aos="fade-up" data-aos-duration="1000" class="container pt-5">
+  <h4 class="text-center mb-4 fw-bold">LAYANAN SERVICE</h4>
+  <div class="card mb-5 bg-light">
+    <div class="card-body">
+    <div class="row">
+    <div class="col-lg-8 col-md-12">
+      <p class="text-center mt-1 fs-5">Laptop anda bermasalah?? Hubungi Kami</p>
+      <form action="" method="post" id="form">
+        <div class="mb-3">
+          <label for="nama" class="form-label"></label>
+          <input type="text" class="form-control" placeholder="Nama Lengkap" id="nama" name="nama">
+        </div>
+        <div class="mb-3">
+          <label for="email" class="visually-hidden"></label>
+          <input type="email" class="form-control" placeholder="Masukan Email Anda" id="email" name="email" required>
+        </div>
+        <div class="mb-3">
+          <label for="pesan" class="visually-hidden"></label>
+          <textarea class="form-control" placeholder="Tuliskan Masalah Komputer Anda" id="" rows="6"></textarea>
+        </div>  
+        <label for="submit" class="visually-hidden"></label>
+        <button type="submit" class="btn btn-outline-primary text-left fw-bold mb-1" onclick="checkForm()">Kirim</button>      
+      </div>
+      </form>
+      <div class="col-lg-3 col-md-12 order-md-2 ms-3 mt-5">
+        <h4 class="mt-3 fs-6 fw-bold">Email</h4>
+        <p class="mb-3">balicomputer212@gmail.com</p>
+        <h4 class="mt-3 fs-6 fw-bold">WhatsApp / Telepon</h4>
+        <p class="mb-3">085338810695</p>
+        <h4 class="mt-3 fs-6 fw-bold">Alamat</h4>
+        <p class="mb-3">Gang FX No.14, Panjer, Denpasar Selatan</p>
+        <h4 class="mt-3 fs-6 fw-bold">Sosial Media</h4>
+        <div class="d-flex mb-6 mb-md-0">
+          <a href="https://www.instagram.com/" target="_blank" class="d-block me-2"><img src="img/instagram.png" alt="" width="20"></a>
+          <a href="https://www.youtube.com/" target="_blank" aria-label="Link" class="d-block me-2"><img src="img/youtube.png" alt="" width="27"></a>
+          <a href="https://www.facebook.com/" target="_blank" aria-label="Link" class="d-block me-2"><img src="img/facebook.png" alt="" width="20"></a>
+          <a href="https://www.whatsapp.com/" target="_blank" aria-label="Link" class="d-block me-2"><img src="img/whatsApp.png" alt="" width="20"></a>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+</div>
+</div>
+<!-- Kontak -->
+
+<!-- Team -->
+<div id="team"><br><br>
+  <div class="container-fluid">
+    <h4 class="text-center mt-5 fw-bold" id="index">OUR TEAM</h4><br>
+      <div class="row justify-content-sm-center">
+        <div class="col-sm-3">
+          <section class="text-center fw-bold"> 
+            <a href="" class="position-relative" data-bs-target="#team1" data-bs-toggle="modal"><img src="img/image1.jpg" alt="" width="200" class="rounded-circle img-thumbnail bg-dark"></a>
+            <p class="pt-2">GEDE ADI DWI PUTRA</p>
+          </section>
+        </div>
+        <div class="modal fade" id="team1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Biodata Diri</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <div class="row">
+                  <div class="col-md-6 mt-3">
+                          <img src="img/image2.jpg" class="d-block w-100 rounded img-thumbnail" alt="" width="50px">
+                      </div>
+                  <div class="col-md-6">
+                    <table class="table table-borderless">
+                     <tr>
+                        <th>Nama</th>
+                        <td>Gede Adi Dwi Putra</td>
+                      </tr>
+                      <tr>
+                        <th>NIM</th>
+                        <td>210010057</td>
+                      </tr>
+                      <tr>
+                        <th>Tempat, tanggal lahir</th>
+                        <td>Denpasar, 09 Juni 2002</td>
+                      </tr>
+                      <tr>
+                        <th>Email</th>
+                        <td>gedeadiputra14@gmail.com</td>
+                      </tr>
+                        <th>Alamat</th>
+                        <td>Jalan Raya Kesambi Gg. Soka No.04</td>
+                      </tr>
+                      <tr>
+                        <th>Kampus</th>
+                        <td>ITB Stikom Bali</td>
+                      </tr>
+                      <tr>
+                        <th>Status</th>
+                        <td>Mahasiswa</td>
+                      </tr>
+                      <tr>
+                        <th>Prodi</th>
+                        <td>Sistem Komputer</td>
+                      </tr>
+                      <tr>
+                        <th>Motto Hidup</th>
+                        <td>"More Then You Know"</td>
+                      </tr>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Kembali</button>
+            </div>
+          </div>
+        </div>
+        </div>
+
+        <div class="col-sm-3">
+          <section class="text-center fw-bold"> 
+            <a href="" class="position-relative" data-bs-target="#team2" data-bs-toggle="modal"><img src="img/image4.jpg" alt="" width="195"  class="rounded-circle img-thumbnail bg-dark"></a>
+            <p class="pt-2">KEVIN SAMUEL M.</p>
+          </section>
+        </div>
+        <div class="modal fade" id="team2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Biodata Diri</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <div class="row">
+                  <div class="col-md-6 mt-3">
+                          <img src="img/image3.jpg" class="d-block w-100 rounded img-thumbnail" alt="" width="50px">
+                      </div>
+                  <div class="col-md-6">
+                    <table class="table table-borderless">
+                     <tr>
+                        <th>Nama</th>
+                        <td>Kevin Samuel Maturbongs</td>
+                      </tr>
+                      <tr>
+                        <th>NIM</th>
+                        <td>210010136</td>
+                      </tr>
+                      <tr>
+                        <th>Tempat, tanggal lahir</th>
+                        <td> Timika, 25 Januari 2003</td>
+                      </tr>
+                      <tr>
+                        <th>Email</th>
+                        <td>kkkkk222@gmail.com</td>
+                      </tr>
+                        <th>Alamat</th>
+                        <td> Nuansa Timur PP No.14</td>
+                      </tr>
+                      <tr>
+                        <th>Kampus</th>
+                        <td>ITB Stikom Bali</td>
+                      </tr>
+                      <tr>
+                        <th>Status</th>
+                        <td>Mahasiswa</td>
+                      </tr>
+                      <tr>
+                        <th>Prodi</th>
+                        <td>Sistem Komputer</td>
+                      </tr>
+                      <tr>
+                        <th>Motto Hidup</th>
+                        <td>"If You Failed, Then Failed"</td>
+                      </tr>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Kembali</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Team End -->
+
+<!-- Formulir -->
+  <div class="container pt-5"><br><br>
+    <div class="row justify-content-center">
+      <div class="col-sm-12">
+    <div class="card mx-auto d-sm-block"  style="width: 65%;height: 30%;">
+      <div class="card-body bg-info">
+        <div class="judul text-center">
+          <h5 class="fw-bold">
+            KAMI SEDANG MEMBUKA LOWONGAN KERJA
+          </h5>
+          <h6>Jika anda berminat bisa klik link dibawah ini</h6>
+          <a class="btn btn-outline-dark fw-bold" data-mdb-ripple-color="dark" type="button" data-bs-target="#satu" data-bs-toggle="modal" role="button">
+            FORM PENDAFTARAN</a>
+        </div>
+      </div>
+     </div> 
+     </div>
+     </div>
+      <div class="modal fade" id="satu" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable">
+          <div class="modal-content" style="width: 100%;">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Biodata Diri</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <form action="" method="get" name="formulir_form" onsubmit="return chekform()">
+                <div class="mb-2">
+                  <label for="nama" class="form-label">Nama Lengkap</label>
+                  <input type="text" class="form-control" id="nama" required>
+                </div>
+                <div class="mb-2">
+                  <label for="email" class="form-label">Email</label>
+                  <input type="email" class="form-control" id="email" name="email" required>
+                </div>
+                <div class="mb-2">
+                  <label for="" class="col-sm-3 col-form-label">Jenis Kelamin</label>
+                <div class="row mb-2">
+                <div class="col-md-6">
+                  <input class="form-check-input" type="radio" name="jeniskelamin" id="Laki" value="L">
+                  <label class="form-check-label" for="laki">Laki-Laki</label>
+                  <input class="form-check-input" type="radio" name="jeniskelamin" id="perempuan" value="P">
+                  <label class="form-check-label" for="perempuan">Perempuan</label>
+                </div>
+                </div>
+                </div>
+                <div class="mb-2">
+                  <label for="tanggal" class="form-label">Tanggal Lahir</label>
+                  <input type="date" class="form-control" id="tanggal">
+                </div>
+                <div class="mb-2">
+                  <label for="hp" class="form-label">WhatsApp</label>
+                  <input type="text" class="form-control" id="hp" name="hp">
+                </div>
+                <div class="mb-2">
+                  <label for="alamat" class="form-label">Alamat Rumah</label>
+                  <textarea class="form-control" id="alamat" rows="3" required></textarea>
+                </div>
+                <div class="mb-2">
+                  <label for="select" class="form-label">Pilih Posisi</label>
+                  <select class="form-select" aria-label="Default select example" name="prodi" id="prodi">
+                    <option selected>==Pilih Posisi==</option>
+                    <option value="1">Staf</option>
+                    <option value="2">Admin</option>
+                    <option value="3">Front Office</option>
+                  </select>
+                </div>
+                <div class="mb-2">
+                  <label for="cv" class="form-label">Lampirkan CV</label>
+                  <input type="file" class="form-control" id="cv" name="cv" required>
+                </div>
+                <div class="mb-2">
+                  <label for="gambar" class="form-label">Unggah Foto 3x4</label>
+                  <div>
+                    <img src="img/default.png" id="upload_gambar" alt="" width="150px" class="ms-3 mb-3">
+                    <input class="form-control" type="file" id="gambar" name="gambar" onchange="validation()" required>
+                  </div>
+                </div>
+                <button type="submit" class="btn btn-primary " onclick="return chekform()">Kirim</button>
+                <button type="reset" class="btn btn-primary ">Reset</button>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="close" class="btn btn-secondary" data-bs-dismiss="modal">Kembali</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Modal Beli End -->
+  </div>
+<!-- Formulir End-->
+
+<!-- Maps -->
+<div id="maps"><br><br>
+  <h4 class="fw-bold text-center pt-5 mb-4">ALAMAT TOKO</h4>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3944.063303465078!2d115.23066581416506!3d-8.685530390852453!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd2408dc9188501%3A0xabed3751f8d418b6!2sKOKO%20Komputer!5e0!3m2!1sid!2sid!4v1657192956465!5m2!1sid!2sid" 
+    width="100%" height="490" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+</div>
+<!-- Maps End -->
+
+<!-- Footer -->
+<div class="footer bg-dark text-white pb-3" style="height: auto;">
+  <div class="container">
+    <a href=""><img src="img/logo2.png" alt="" width="150" class="mx-auto d-block pt-3"></a>
+    <div class="row d-flex justify-content-md-center ps-5">
+      <div class="col-lg-4 col-md-6 pb-3">
+        <h5 class="title mt-4 mb-2 fw-bold">Layanan</h5>
+          <p align="text-left" class="text mb-2">Menjual laptop dan perlengkapan komputer, konsultasi spesifikasi untuk rakit PC.</p>
+          <p>Serta menyediakan jasa service laptop dan komputer.</p>
+      </div>
+      <div class="col-lg-4 col-md-6 pb-3">
+        <h5 class="title mt-4 mb-2 fw-bold ">Toko Kami</h5>
+        <div class="icon">
+          <ul class="list-unstyled">
+            <li style="list-style:none;">
+              <a href="https://www.google.co.id/maps" target="_blank"><img src="img/maps.png" alt="" width="20"></a> Gang FX No.14, Panjer, Denpasar Selatan
+            </li>
+            <li style="list-style:none;">
+              <a class=""><img src="img/kalender.png" alt="" width="20"></a> Buka Senin-Sabtu, 09:00-18:00 WITA
+            </li>
+            <li style="list-style:none;">
+              <a href="https://www.whatsapp.com/" target="_blank"><img src="img/whatsapp1 (1).png" alt="" width="20"></a> 085338810695 
+            </li>
+            <li style="list-style:none;">
+              <a href="http://gmail.com/" target="_blank"><img src="img/mail.png" alt="" width="20"></a> balicomputer212@gmail.com
+            </li>
+          </ul>
+        </div> 
+      </div>
+      <div class="col-lg-3 col-md-6 pb-2">
+        <h5 class="title mt-4 mb-2 fw-bold">Tentang Kami</h5>
+            <p class="mb-2">Kami siap melayani kebutuhan anda, datang langsung ke toko atau hubungi kontak kami.
+            </p>
+        </div>
+      </div>
+   </div>
+      <p class="text-center fw-bold" style="font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif"><br>
+       Copyright ©2022 BaliComputer | Website By Adi Putra & Kevin Samuel.
+      
+</div>
+</div>
+<!-- Footer End -->
+    
+<!-- Javascript -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" 
+    integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+  <script src="js/bootstrap.bundle.min.js"></script>     
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+   AOS.init();
+  </script>
+  <script type="text/javascript">
+    var nav = document.querySelector('nav');
+      window.addEventListener('scroll', function () {
+        if (window.pageYOffset > 100) {
+          nav.classList.add('bg-dark', 'shadow');
+        } else {
+          nav.classList.remove('bg-dark', 'shadow');
+        }
+      });
+  </script>
+<!-- Javascript -->
+</body>
+</html>
