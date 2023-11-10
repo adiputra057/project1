@@ -2,7 +2,7 @@
 Beautiful HTML,CSS and Bootstrap Project
 
 # Demo
-- https://balicom.vercel.app/
+- https://balicom.vercel.app
 
 # Clone Project
 - https://github.com/adiputrao57/project1
