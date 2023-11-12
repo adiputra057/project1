@@ -157,6 +157,19 @@ function chekform(){
     .row .card:hover{
       transform: scale(1.03);
     }
+    .custom-image {
+    height: 100%;
+    }
+    .formulir{
+      width: 60%;
+      height: 80%;
+      border-radius: 10px; 
+      margin: 20px;
+      padding: 10px;
+      padding-bottom: 20px;
+      
+    }
+
     #profil p{
       font-family: poppins, sans-serif;
       font-size: 0.90rem;
@@ -1999,7 +2012,7 @@ function chekform(){
         <div class="col-sm-3">
           <section class="text-center fw-bold"> 
             <a href="" class="position-relative" data-bs-target="#team1" data-bs-toggle="modal"><img src="img/image1.jpg" alt="" width="200" class="rounded-circle img-thumbnail bg-dark"></a>
-            <p class="pt-2">GEDE ADI DWI PUTRA</p>
+            <p class="pt-2" >GEDE ADI DWI PUTRA</p>
           </section>
         </div>
         <div class="modal fade" id="team1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -2012,7 +2025,7 @@ function chekform(){
               <div class="modal-body">
                 <div class="row">
                   <div class="col-md-6 mt-3">
-                          <img src="img/image2.jpg" class="d-block w-100 rounded img-thumbnail" alt="" width="50px">
+                          <img src="img/image2.jpg" class="d-block w-100 rounded img-thumbnail custom-image" width="50px">
                       </div>
                   <div class="col-md-6">
                     <table class="table table-borderless">
@@ -2055,16 +2068,13 @@ function chekform(){
                   </div>
                 </div>
               </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Kembali</button>
-            </div>
           </div>
         </div>
         </div>
 
         <div class="col-sm-3">
           <section class="text-center fw-bold"> 
-            <a href="" class="position-relative" data-bs-target="#team2" data-bs-toggle="modal"><img src="img/image4.jpg" alt="" width="195"  class="rounded-circle img-thumbnail bg-dark"></a>
+            <a href="" class="position-relative" data-bs-target="#team2" data-bs-toggle="modal"><img src="img/image4.jpg" alt="" width="195px"  class="rounded-circle img-thumbnail bg-dark"></a>
             <p class="pt-2">KEVIN SAMUEL M.</p>
           </section>
         </div>
@@ -2078,7 +2088,7 @@ function chekform(){
               <div class="modal-body">
                 <div class="row">
                   <div class="col-md-6 mt-3">
-                          <img src="img/image3.jpg" class="d-block w-100 rounded img-thumbnail" alt="" width="50px">
+                          <img src="img/image3.jpg" class="d-block w-100 rounded img-thumbnail custom-image" width="50px">
                       </div>
                   <div class="col-md-6">
                     <table class="table table-borderless">
@@ -2121,9 +2131,6 @@ function chekform(){
                   </div>
                 </div>
               </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Kembali</button>
-            </div>
           </div>
         </div>
       </div>
@@ -2136,20 +2143,18 @@ function chekform(){
   <div class="container pt-5"><br><br>
     <div class="row justify-content-center">
       <div class="col-sm-12">
-    <div class="card mx-auto d-sm-block"  style="width: 65%;height: 30%;">
-      <div class="card-body bg-info">
+    <div class="card mx-auto d-sm-block formulir bg-info">
         <div class="judul text-center">
           <h5 class="fw-bold">
             KAMI SEDANG MEMBUKA LOWONGAN KERJA
           </h5>
           <h6>Jika anda berminat bisa klik link dibawah ini</h6>
           <a class="btn btn-outline-dark fw-bold" data-mdb-ripple-color="dark" type="button" data-bs-target="#satu" data-bs-toggle="modal" role="button">
-            FORM PENDAFTARAN</a>
+            DAFTAR</a>
         </div>
       </div>
-     </div> 
-     </div>
-     </div>
+      </div>
+    </div>
       <div class="modal fade" id="satu" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-scrollable">
           <div class="modal-content" style="width: 100%;">
@@ -2213,9 +2218,6 @@ function chekform(){
                 <button type="submit" class="btn btn-primary " onclick="return chekform()">Kirim</button>
                 <button type="reset" class="btn btn-primary ">Reset</button>
               </form>
-            </div>
-            <div class="modal-footer">
-              <button type="close" class="btn btn-secondary" data-bs-dismiss="modal">Kembali</button>
             </div>
           </div>
         </div>
